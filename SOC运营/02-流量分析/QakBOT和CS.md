@@ -12,9 +12,9 @@
 - 其他: __%
 ```
 异常指标：
-- [x]  HTTP占比是否异常高？（正常<5%，恶意可能>10%）
-- [ ]  是否有大量TLS流量？（Qakbot C2特征）
-- [x] 是否有SMB流量？（内网横向）
+- [ ]  HTTP占比是否异常高？（正常<5%，恶意可能>10%）
+- [x]  是否有大量TLS流量？（Qakbot C2特征）
+- [ ] 是否有SMB流量？（内网横向）
 
 ![](assets/QakBOT和CS/file-20260428153248417.png)
 
@@ -70,11 +70,11 @@ User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7
 Host头: raformatico.com
 content-type：application/octet-stream
 
-可疑点：
-□ URL以.jpg结尾但实际下载二进制？（Qakbot特征）
-□ Host是否为被入侵的合法网站？（WordPress等）
-□ User-Agent是否为正常浏览器？
 ```
+异常指标：
+- [x] URL以.jpg结尾但实际下载二进制？（Qakbot特征）
+- [x] Host是否为被入侵的合法网站？（WordPress等）
+- [x] User-Agent是否为正常浏览器？
 ua头分析：
 - 宣称 `MSIE 7.0`，但 `Trident/7.0` 实际上是 **IE11 的内核版本**（矛盾且过时）。
 - `Windows NT 10.0` 对应 Windows 10 / 11，却用 IE7 模式？极不寻常。
